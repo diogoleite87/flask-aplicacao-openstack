@@ -1,17 +1,15 @@
+# -*- coding: utf-8 -*-
 from flask import Flask, request
 
 app = Flask(__name__)
 
-# Lista para rastrear os IPs dos usuários
 usuarios = []
 
 
 @app.route('/')
 def hello_world():
-    # Obtém o IP do usuário atual
     ip = request.remote_addr
 
-    # Adiciona o IP à lista se ainda não estiver lá
     if ip not in usuarios:
         usuarios.append(ip)
 
