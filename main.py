@@ -13,7 +13,7 @@ def hello_world():
     if ip not in usuarios:
         usuarios.append(ip)
 
-    return f'Hello World'
+    return 'IP da Maquina: ' + {request.host} + ', Porta:' + {request.environ["SERVER_PORT"]} + ', Total de Usuarios: ' + {len(usuarios)}
 
 
 if __name__ == '__main__':
