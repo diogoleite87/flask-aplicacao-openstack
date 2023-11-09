@@ -8,12 +8,33 @@ usuarios = []
 
 @app.route('/')
 def hello_world():
-    ip = request.remote_addr
-
-    if ip not in usuarios:
-        usuarios.append(ip)
-
-    return 'IP da Maquina: ' + {request.host} + ', Porta:' + {request.environ["SERVER_PORT"]} + ', Total de Usuarios: ' + {len(usuarios)}
+    return """
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Minha Página Flask</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                text-align: center;
+                margin: 100px;
+            }
+            h1 {
+                color: #333;
+            }
+            p {
+                font-size: 18px;
+                color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Olá, Mundo!</h1>
+        <p>Esta é uma página bonita em Flask.</p>
+    </body>
+    </html>
+    """
 
 
 if __name__ == '__main__':
